@@ -1,8 +1,8 @@
-- entry form
-- user name in header
-- user can type in name and guest entry
-- input for name disappear once name entered
-- user have button to change guest name
+- [ ] entry form
+- [ ] user name in header
+- [ ] user can type in name and guest entry
+- [ ] input for name disappear once name entered
+- [ ] user have button to change guest name
 
 - if no user = "Guest"
 
@@ -16,7 +16,8 @@
 
 ### Views
 
-- [ ] Home - GuestForm
+- [ ] Home - EntryProvider
+  - what Components are rendered?: EntryList, GuestInput
 
 ### States
 
@@ -25,8 +26,10 @@
 
 ### Components
 
-- [ ] GuestForm
-  - [ ] setEntry
+- [ ] GuestInput
+  - [ ] setEntry -> e.target.value
   - [ ] setGuest
+- [ ] EntryList - map through entries
+- [ ] EntryCard - what you want in each entry
 - [ ] Header
 - [ ] Footer
