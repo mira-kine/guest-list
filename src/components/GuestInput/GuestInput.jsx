@@ -6,7 +6,7 @@ import { useEntry } from '../../context/EntryProvider/EntryProvider';
 export default function GuestInput() {
   const [name, setName] = useState('');
   const [guestEntry, setGuestEntry] = useState('');
-  const { setGuest } = useGuest();
+  const { guest, setGuest } = useGuest();
   const { setEntry } = useEntry();
 
   function updateList() {
@@ -24,18 +24,23 @@ export default function GuestInput() {
     updateList();
   };
 
+  const guestNameInput = (
+    <div>
+      <label>Guest Name: </label>
+      <input
+        id="guestName"
+        type="text"
+        placeholder="Your name here"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </div>
+  );
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        {/* {guest ? null : guestNameInput} */}
-        <label>Guest Name: </label>
-        <input
-          id="guestName"
-          type="text"
-          placeholder="Your name here"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        {guest ? null : guestNameInput}
         <div>
           <label>Guest Entry: </label>
           <input
