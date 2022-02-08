@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function GuestForm() {
+export default function GuestInput() {
   return <div></div>;
 }
