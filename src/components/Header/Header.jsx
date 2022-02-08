@@ -1,5 +1,7 @@
 import React from 'react';
+import { useGuest } from '../../context/GuestProvider/GuestProvider';
 
 export default function Header() {
-  return <div>Hello Guest!</div>;
+  const { guest } = useGuest();
+  return <div>Hello {guest ? 'guest' : { guest }}</div>;
 }

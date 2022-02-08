@@ -13,34 +13,46 @@ export default function GuestInput() {
     // if there is no guest entry that exists, set new Guest and entry
     if (!guestEntry) return setGuest(name);
     // spread current entries available out, add the new one
-    setEntry([entry, { name, guestEntry }]);
+    setEntry([...entry, { name, message: guestEntry }]);
     // reset entry space as empty string
     setGuestEntry('');
   }
-
   // handle for submit button
   const handleSubmit = (e) => {
-    e.preventDefault;
+    e.preventDefault();
     updateList();
   };
 
-  // set
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>Guest Name: </label>
-          <input placeholder="name" value={name} onChange={(e) => setName(e.target.value)} />
+          <input
+            id="guestName"
+            type="text"
+            placeholder="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div>
           <label>Guest Entry: </label>
           <textarea
+            id="guestEntry"
             placeholder="type something nice here"
             value={guestEntry}
             onChange={(e) => setGuestEntry(e.target.value)}
           />
         </div>
-        <button onClick={handleSubmit}>Submit</button>
+        <button
+          onClick={() => {
+            setGuest('');
+            setName('');
+          }}
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
