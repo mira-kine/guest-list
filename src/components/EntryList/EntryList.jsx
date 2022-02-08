@@ -6,10 +6,10 @@ export default function EntryList() {
   const { entry } = useEntry();
   return (
     <div>
-      {entry.map((item) => (
-        <div key={item.id} className="entry-list">
-          <span>{item.name}</span>
-          <p>{item.message}</p>
+      {entry.map(({ name, message, id }) => (
+        <div key={id} className="entry-list">
+          <span>{name}</span>
+          <p>{message}</p>
         </div>
       ))}
     </div>

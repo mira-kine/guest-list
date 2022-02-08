@@ -11,9 +11,14 @@ export default function GuestInput() {
 
   function updateList() {
     // if there is no guest entry that exists, set new Guest and entry
-    if (!guestEntry) return setGuest(name);
+    if (!guestEntry) return;
     // spread current entries available out, add the new one
-    setEntry((prevState) => [...prevState, { name, message: guestEntry, id: guestEntry }]);
+    setGuest(name);
+    setEntry((prevState) => [
+      ...prevState,
+      { name, message: guestEntry, id: Math.floor(Math.random() * 100) },
+    ]);
+
     // reset entry space as empty string
     setGuestEntry('');
   }
