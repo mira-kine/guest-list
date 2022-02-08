@@ -26,23 +26,28 @@ export default function GuestInput() {
 
   console.log('entry', entry);
   console.log('guest', guest);
+
+  const guestInput = (
+    <div>
+      <label>Guest Name: </label>
+      <input
+        id="guestName"
+        type="text"
+        placeholder="Your name here"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </div>
+  );
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Guest Name: </label>
-          <input
-            id="guestName"
-            type="text"
-            placeholder="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
+        {guest ? null : guestInput}
         <div>
           <label>Guest Entry: </label>
           <input
-            type="text"
+            type="textarea"
             id="guestEntry"
             placeholder="type something nice here"
             value={guestEntry}
@@ -50,14 +55,14 @@ export default function GuestInput() {
           />
         </div>
         <button type="submit">Submit</button>
-        {/* <button
+        <button
           onClick={() => {
             setGuest('');
             setName('');
           }}
         >
-          Submit
-        </button> */}
+          Not you?
+        </button>
       </form>
     </div>
   );
