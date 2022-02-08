@@ -1,0 +1,6 @@
+.entry-list {
+  border: 2px solid black;
+  height: fit-content;
+  width: 20%;
+  max-width: 20vw;
+}

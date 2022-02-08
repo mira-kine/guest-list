@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function EntryCard() {
-  return <div></div>;
+  return <div>Hello</div>;
 }

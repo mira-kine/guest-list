@@ -6,14 +6,14 @@ import { useEntry } from '../../context/EntryProvider/EntryProvider';
 export default function GuestInput() {
   const [name, setName] = useState('');
   const [guestEntry, setGuestEntry] = useState('');
-  const { guest, setGuest } = useGuest();
-  const { entry, setEntry } = useEntry();
+  const { setGuest } = useGuest();
+  const { setEntry } = useEntry();
 
   function updateList() {
     // if there is no guest entry that exists, set new Guest and entry
     if (!guestEntry) return setGuest(name);
     // spread current entries available out, add the new one
-    setEntry([...entry, { name, message: guestEntry }]);
+    setEntry((prevState) => [...prevState, { name, message: guestEntry, id: guestEntry }]);
     // reset entry space as empty string
     setGuestEntry('');
   }
@@ -24,26 +24,18 @@ export default function GuestInput() {
     updateList();
   };
 
-  console.log('entry', entry);
-  console.log('guest', guest);
-
-  const guestInput = (
-    <div>
-      <label>Guest Name: </label>
-      <input
-        id="guestName"
-        type="text"
-        placeholder="Your name here"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-    </div>
-  );
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        {guest ? null : guestInput}
+        {/* {guest ? null : guestNameInput} */}
+        <label>Guest Name: </label>
+        <input
+          id="guestName"
+          type="text"
+          placeholder="Your name here"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         <div>
           <label>Guest Entry: </label>
           <input
