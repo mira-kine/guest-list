@@ -17,12 +17,15 @@ export default function GuestInput() {
     // reset entry space as empty string
     setGuestEntry('');
   }
+
   // handle for submit button
   const handleSubmit = (e) => {
     e.preventDefault();
     updateList();
   };
 
+  console.log('entry', entry);
+  console.log('guest', guest);
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -38,21 +41,23 @@ export default function GuestInput() {
         </div>
         <div>
           <label>Guest Entry: </label>
-          <textarea
+          <input
+            type="text"
             id="guestEntry"
             placeholder="type something nice here"
             value={guestEntry}
             onChange={(e) => setGuestEntry(e.target.value)}
           />
         </div>
-        <button
+        <button type="submit">Submit</button>
+        {/* <button
           onClick={() => {
             setGuest('');
             setName('');
           }}
         >
           Submit
-        </button>
+        </button> */}
       </form>
     </div>
   );

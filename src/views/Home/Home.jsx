@@ -6,12 +6,10 @@ import Header from '../../components/Header/Header';
 
 export default function Home() {
   return (
-    <div>
-      <EntryProvider>
-        <Header />
-        <GuestInput />
-        <EntryList />
-      </EntryProvider>
-    </div>
+    <EntryProvider>
+      <Header />
+      <GuestInput />
+      <EntryList />
+    </EntryProvider>
   );
 }
