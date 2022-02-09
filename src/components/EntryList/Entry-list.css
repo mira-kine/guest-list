@@ -6,6 +6,7 @@
   max-width: 25vw;
   overflow-wrap: break-word;
   padding: 15px;
+  inline-size: 150px;
 }
 
 .list-container {
