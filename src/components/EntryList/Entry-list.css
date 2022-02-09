@@ -1,6 +1,15 @@
 .entry-list {
-  border: 2px solid black;
-  height: fit-content;
-  width: 20%;
-  max-width: 20vw;
+  border: 1px solid black;
+  margin: 5px;
+  height: auto;
+  max-height: 25vh;
+  max-width: 25vw;
+  overflow-wrap: break-word;
+  padding: 15px;
+}
+
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

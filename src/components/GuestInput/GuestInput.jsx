@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useGuest } from '../../context/GuestProvider/GuestProvider';
 import { useEntry } from '../../context/EntryProvider/EntryProvider';
+import './GuestInput.css';
 
 export default function GuestInput() {
   const [name, setName] = useState('');
@@ -33,7 +34,7 @@ export default function GuestInput() {
     <div>
       <label>Guest Name: </label>
       <input
-        id="guestName"
+        className="guestName"
         type="text"
         placeholder="Your name here"
         value={name}
@@ -42,29 +43,28 @@ export default function GuestInput() {
     </div>
   );
 
+  const handleNew = (e) => {
+    e.preventDefault();
+    setGuest('');
+    setName('');
+  };
+
   return (
-    <div>
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         {guest ? null : guestNameInput}
         <div>
           <label>Guest Entry: </label>
           <input
             type="textarea"
-            id="guestEntry"
+            className="guestEntry"
             placeholder="type something nice here"
             value={guestEntry}
             onChange={(e) => setGuestEntry(e.target.value)}
           />
         </div>
         <button type="submit">Submit</button>
-        <button
-          onClick={() => {
-            setGuest('');
-            setName('');
-          }}
-        >
-          Not you?
-        </button>
+        {guest ? <button onClick={handleNew}>Not {guest}? Sign in</button> : null}
       </form>
     </div>
   );

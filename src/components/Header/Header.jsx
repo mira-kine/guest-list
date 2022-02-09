@@ -1,8 +1,8 @@
 import React from 'react';
 import { useGuest } from '../../context/GuestProvider/GuestProvider';
+import './Header.css';
 
 export default function Header() {
   const { guest } = useGuest();
-  return <div>Hello {guest ? guest : 'guest'}</div>;
+  return <div className="header">Hello {guest ? guest : 'guest'}</div>;
 }
-`1`;

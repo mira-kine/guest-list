@@ -5,7 +5,7 @@ import './Entry-list.css';
 export default function EntryList() {
   const { entry } = useEntry();
   return (
-    <div>
+    <div className="list-container">
       {entry.map(({ name, message, id }) => (
         <div key={id} className="entry-list">
           <span>{name}</span>
