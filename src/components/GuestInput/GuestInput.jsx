@@ -3,12 +3,17 @@ import { useState } from 'react';
 import { useGuest } from '../../context/GuestProvider/GuestProvider';
 import { useEntry } from '../../context/EntryProvider/EntryProvider';
 import './GuestInput.css';
+import { useKeyPress } from 'react-recipes';
 
 export default function GuestInput() {
   const [name, setName] = useState('');
   const [guestEntry, setGuestEntry] = useState('');
   const { guest, setGuest } = useGuest();
   const { setEntry } = useEntry();
+  const mPress = useKeyPress('m');
+  const iPress = useKeyPress('i');
+  const rPress = useKeyPress('r');
+  const aPress = useKeyPress('a');
 
   function updateList() {
     // if there is no guest entry that exists, set new Guest and entry
@@ -69,7 +74,7 @@ export default function GuestInput() {
         </div>
         <div className="button-container">
           <button className="submit-button" type="submit">
-            Submit
+            {mPress || iPress || rPress || aPress ? '😀 ' : 'Submit'}
           </button>
           {guest ? (
             <button className="sign-in" onClick={handleNew}>
