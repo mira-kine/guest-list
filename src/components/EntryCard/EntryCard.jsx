@@ -9,7 +9,7 @@ export default function EntryCard() {
     <div className="entry-card">
       {entry.map(({ name, message, id }) => (
         <div key={id} className="entry-list">
-          <span className="name">{name}</span>
+          <span className="name">{name} 🌸 </span>
           <p>{message}</p>
         </div>
       ))}

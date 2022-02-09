@@ -4,5 +4,5 @@ import './Header.css';
 
 export default function Header() {
   const { guest } = useGuest();
-  return <div className="header">Hello {guest ? guest : 'guest'}</div>;
+  return <div className="header">Hello {guest ? guest : 'guest'} ❤ </div>;
 }

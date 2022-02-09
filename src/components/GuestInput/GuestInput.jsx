@@ -57,14 +57,18 @@ export default function GuestInput() {
           <label>Guest Entry: </label>
           <input
             type="textarea"
-            className="guestEntry"
+            className="guest-entry"
             placeholder="type something nice here"
             value={guestEntry}
             onChange={(e) => setGuestEntry(e.target.value)}
           />
         </div>
-        <button type="submit">Submit</button>
-        {guest ? <button onClick={handleNew}>Not {guest}? Sign in</button> : null}
+        <div className="button-container">
+          <button className="button" type="submit">
+            Submit
+          </button>
+          {guest ? <button onClick={handleNew}>Not {guest}? Sign in</button> : null}
+        </div>
       </form>
     </div>
   );

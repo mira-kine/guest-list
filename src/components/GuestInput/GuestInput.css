@@ -10,3 +10,17 @@ form {
   align-items: center;
   margin: 5%;
 }
+
+.guest-entry {
+  height: 50px;
+  width: 400px;
+}
+
+.button {
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 5vw;
+}
