@@ -31,15 +31,17 @@ export default function GuestInput() {
   };
 
   const guestNameInput = (
-    <div>
-      <label>Guest Name: </label>
-      <input
-        className="guestName"
-        type="text"
-        placeholder="Your name here"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+    <div className="guest-input">
+      <label>
+        Guest Name:
+        <input
+          className="guest-name"
+          type="text"
+          placeholder="Your name here"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
     </div>
   );
 
@@ -53,15 +55,17 @@ export default function GuestInput() {
     <div className="form-container">
       <form onSubmit={handleSubmit}>
         {guest ? null : guestNameInput}
-        <div>
-          <label>Guest Entry: </label>
-          <input
-            type="textarea"
-            className="guest-entry"
-            placeholder="type something nice here"
-            value={guestEntry}
-            onChange={(e) => setGuestEntry(e.target.value)}
-          />
+        <div className="guest-entry-input">
+          <label>
+            Guest Entry:
+            <input
+              type="textarea"
+              className="guest-entry"
+              placeholder="type something nice here"
+              value={guestEntry}
+              onChange={(e) => setGuestEntry(e.target.value)}
+            />
+          </label>
         </div>
         <div className="button-container">
           <button className="button" type="submit">
