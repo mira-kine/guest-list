@@ -68,10 +68,14 @@ export default function GuestInput() {
           </label>
         </div>
         <div className="button-container">
-          <button className="button" type="submit">
+          <button className="submit-button" type="submit">
             Submit
           </button>
-          {guest ? <button onClick={handleNew}>Not {guest}? Sign in</button> : null}
+          {guest ? (
+            <button className="sign-in" onClick={handleNew}>
+              Not {guest}?
+            </button>
+          ) : null}
         </div>
       </form>
     </div>
