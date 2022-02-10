@@ -38,7 +38,7 @@ export default function GuestInput() {
   const guestNameInput = (
     <div className="guest-input">
       <label>
-        Guest Name:
+        <h4 className="label">Guest Name: </h4>
         <input
           className="guest-name"
           type="text"
@@ -62,11 +62,11 @@ export default function GuestInput() {
         {guest ? null : guestNameInput}
         <div className="guest-entry-input">
           <label>
-            Guest Entry:
+            <h4 className="label">Guest Entry: </h4>
             <input
               type="textarea"
               className="guest-entry"
-              placeholder="type something nice here"
+              placeholder="type something..."
               value={guestEntry}
               onChange={(e) => setGuestEntry(e.target.value)}
             />
@@ -78,7 +78,7 @@ export default function GuestInput() {
           </button>
           {guest ? (
             <button className="sign-in" onClick={handleNew}>
-              Not {guest}?
+              Not You?
             </button>
           ) : null}
         </div>

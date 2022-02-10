@@ -4,4 +4,5 @@
   padding: 30px;
   background-color: white;
   font-family: 'Courier New', Courier, monospace;
+  position: sticky;
 }

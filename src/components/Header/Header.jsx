@@ -6,7 +6,9 @@ export default function Header() {
   const { guest } = useGuest();
   return (
     <div className="header">
-      Hello {guest ? guest : 'guest'} {guest === 'indy' ? ' 🎹 ' : ' ❤  '}
+      Hello {guest ? guest : 'guest'} ❤ {guest === 'indy' && ' 🎹 '}
+      {guest === 'tis' && ' 🌟 '}
     </div>
   );
 }
+11;

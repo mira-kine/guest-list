@@ -8,15 +8,16 @@ export default function EntryCard() {
   const { guest } = useGuest();
 
   return (
-    <div className="entry-card">
+    <>
       {entry.map(({ name, message, id }) => (
-        <div key={id} className="entry-list">
+        <div key={id} className="entry-card">
           <span className="name">
             {name} {guest === 'indy' ? ' 🎹 ' : ' 🌸  '}
+            {guest === 'tis' && ' 🌟 '}
           </span>
           <p>{message}</p>
         </div>
       ))}
-    </div>
+    </>
   );
 }
