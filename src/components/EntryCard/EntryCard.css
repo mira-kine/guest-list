@@ -1,13 +1,10 @@
 .entry-card {
-  border-radius: 100%;
   margin: 15px;
-  height: auto;
   max-height: 40vh;
   max-width: 40vw;
   overflow-wrap: break-word;
   padding: 15px;
   inline-size: 110px;
-  background-color: antiquewhite;
 }
 
 .name {

@@ -12,12 +12,11 @@
 }
 
 button {
-  padding: 4px;
-  margin: 20px;
   font-family: monospace;
   font-size: 0.8rem;
   width: 100px;
   height: 28px;
+  margin-top: 10px;
 }
 
 form {
@@ -28,4 +27,8 @@ form {
 .label {
   font-size: 1.1rem;
   font-weight: normal;
+}
+
+.submit-button {
+  margin-right: 10px;
 }
