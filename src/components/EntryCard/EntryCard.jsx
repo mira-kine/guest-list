@@ -11,11 +11,11 @@ export default function EntryCard() {
     <>
       {entry.map(({ name, message, id }) => (
         <div key={id} className="entry-card">
-          <span className="name">
+          <div className="name">
             {name} {guest === 'indy' ? ' 🎹 ' : ' 🌸  '}
             {guest === 'tis' && ' 🌟 '}
-          </span>
-          <p>{message}</p>
+          </div>
+          <p className="message">{message}</p>
         </div>
       ))}
     </>

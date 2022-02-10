@@ -1,8 +1,8 @@
 .form-container {
   display: flex;
-  margin: 5%;
+  padding: 20px;
   justify-content: center;
-  position: absolute;
+  border: 1px solid aliceblue;
   align-items: center;
 }
 
