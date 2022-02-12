@@ -8,11 +8,13 @@
 
 ### GuestProvider
 
-- useState [guest, setGuest]
+- [x] useState [guest, setGuest]
+- [x] useGuest hook
 
 ### EntryProvider
 
-- useState [entry, setEntry]
+- [x] useState [entry, setEntry]
+- [x] useEntry hook
 
 ### Views
 

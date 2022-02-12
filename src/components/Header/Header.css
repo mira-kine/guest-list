@@ -1,0 +1,13 @@
+.header {
+  background: rgb(179, 255, 250);
+  background: linear-gradient(
+    90deg,
+    rgba(179, 255, 250, 1) 0%,
+    rgba(255, 171, 171, 1) 53%,
+    rgba(255, 217, 130, 1) 95%
+  );
+  font-size: 1.7rem;
+  padding: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  position: sticky;
+}

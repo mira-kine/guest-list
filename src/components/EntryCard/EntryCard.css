@@ -1,0 +1,23 @@
+.entry-card {
+  margin: 15px;
+  height: 240px;
+  width: 240px;
+  background-image: url(../../assets/note.png);
+  background-repeat: no-repeat;
+  background-size: 152%;
+  background-position: center;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-family: monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.message {
+  overflow-wrap: break-word;
+}
