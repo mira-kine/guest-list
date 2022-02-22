@@ -4,22 +4,24 @@ import { useGuest } from '../../context/GuestProvider/GuestProvider';
 import { useEntry } from '../../context/EntryProvider/EntryProvider';
 import './GuestInput.css';
 import { useKeyPress } from 'react-recipes';
+import { useHistory } from 'react-router-dom';
 
 export default function GuestInput() {
-  const [name, setName] = useState('');
+  const [name] = useState('');
   const [guestEntry, setGuestEntry] = useState('');
-  const { guest, setGuest } = useGuest();
+  const { setGuest } = useGuest();
   const { setEntry } = useEntry();
   const mPress = useKeyPress('m');
   const iPress = useKeyPress('i');
   const rPress = useKeyPress('r');
   const aPress = useKeyPress('a');
+  const history = useHistory();
 
   function updateList() {
     // if there is no guest entry that exists, set new Guest and entry
     if (!guestEntry) return;
     // spread current entries available out, add the new one
-    setGuest(name);
+    // setGuest(name);
     setEntry((prevState) => [
       ...prevState,
       { name, message: guestEntry, id: Math.floor(Math.random() * 100) },
@@ -35,31 +37,37 @@ export default function GuestInput() {
     updateList();
   };
 
-  const guestNameInput = (
-    <div className="guest-input">
-      <label>
-        <h4 className="label">Guest Name: </h4>
-        <input
-          className="guest-name"
-          type="text"
-          placeholder="Your name here"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
-    </div>
-  );
+  // const guestNameInput = (
+  //   <div className="guest-input">
+  //     <label>
+  //       <h4 className="label">Guest Name: </h4>
+  //       <input
+  //         className="guest-name"
+  //         type="text"
+  //         placeholder="Your name here"
+  //         value={name}
+  //         onChange={(e) => setName(e.target.value)}
+  //       />
+  //     </label>
+  //   </div>
+  // );
 
-  const handleNew = (e) => {
+  // const handleNew = (e) => {
+  //   e.preventDefault();
+  //   setGuest('');
+  //   setName('');
+  // };
+
+  const handleLogout = (e) => {
     e.preventDefault();
-    setGuest('');
-    setName('');
+    setGuest({ name: '', password: '' });
+    history.push('/login');
   };
 
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
-        {guest ? null : guestNameInput}
+        {/* {guest ? null : guestNameInput} */}
         <div className="guest-entry-input">
           <label>
             <h4 className="label">Guest Entry: </h4>
@@ -76,11 +84,12 @@ export default function GuestInput() {
           <button className="submit-button" type="submit">
             {mPress || iPress || rPress || aPress ? '😀 ' : 'Submit'}
           </button>
-          {guest ? (
+          {/* {guest ? (
             <button className="sign-in" onClick={handleNew}>
               Not You?
             </button>
-          ) : null}
+          ) : null} */}
+          <button onClick={handleLogout}>Log out</button>
         </div>
       </form>
     </div>
