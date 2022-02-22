@@ -1,8 +1,8 @@
-- [ ] entry form
-- [ ] user name in header
-- [ ] user can type in name and guest entry
-- [ ] input for name disappear once name entered
-- [ ] user have button to change guest name
+- [x] entry form
+- [x] user name in header
+- [x] user can type in name and guest entry
+- [x] input for name disappear once name entered
+- [x]] user have button to change guest name
 
 - if no user = "Guest"
 
@@ -18,7 +18,7 @@
 
 ### Views
 
-- [ ] Home - EntryProvider
+- [x] Home - EntryProvider
   - what Components are rendered?: EntryList, GuestInput
 
 ### States
@@ -28,10 +28,29 @@
 
 ### Components
 
-- [ ] GuestInput
-  - [ ] setEntry -> e.target.value
-  - [ ] setGuest
-- [ ] EntryList - map through entries
-- [ ] EntryCard - what you want in each entry
-- [ ] Header
+- [x] GuestInput
+  - [x] setEntry -> e.target.value
+  - [x] setGuest
+- [x] EntryList - map through entries
+- [x] EntryCard - what you want in each entry
+- [x] Header
 - [ ] Footer
+
+# Authentication and Authorization
+
+### Routes
+
+- [ ] "/" home page
+- [ ] "/login" login page, redirected to if no user
+
+### Views
+
+- [ ] Authorization page with form
+- Form
+  - [ ] email, password
+  - [ ] handleSubmit
+    - if email === process.env.REACT_APP_AUTH_EMAIL then setUser, otherwise put error message
+
+### Components
+
+- [ ] PrivateRoute -> props: children ...rest(or routeProps) - [ ] redirects according to location and presence of user
