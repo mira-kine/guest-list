@@ -81,7 +81,7 @@ export default function GuestInput() {
           </label>
         </div>
         <div className="button-container">
-          <button className="submit-button" type="submit">
+          <button className="submit-button" type="submit" aria-label="submit-button">
             {mPress || iPress || rPress || aPress ? '😀 ' : 'Submit'}
           </button>
           {/* {guest ? (
