@@ -6,7 +6,6 @@ import './EntryCard.css';
 export default function EntryCard() {
   const { entry } = useEntry();
   const { guest } = useGuest();
-
   return (
     <>
       {entry.map(({ name, message, id }) => (

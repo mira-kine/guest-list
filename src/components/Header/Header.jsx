@@ -3,11 +3,13 @@ import { useGuest } from '../../context/GuestProvider/GuestProvider';
 import './Header.css';
 
 export default function Header() {
-  const { guest } = useGuest();
+  const {
+    guest: { name },
+  } = useGuest();
   return (
     <div className="header">
-      Hello {guest ? guest : 'guest'} ❤ {guest === 'indy' && ' 🎹 '}
-      {guest === 'tis' && ' 🌟 '}
+      Hello {name ? name : 'name'} ❤ {name === 'indy' && ' 🎹 '}
+      {name === 'tis' && ' 🌟 '}
     </div>
   );
 }

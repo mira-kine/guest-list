@@ -3,14 +3,7 @@ import { createContext, useContext, useState } from 'react';
 const GuestContext = createContext();
 
 const GuestProvider = ({ children }) => {
-  const [guest, setGuest] = useState('');
-
-  // const login = (email, password) => {
-  //   const authorized = email === process.env.AUTH_EMAIL && password === process.env.AUTH_PASSWORD;
-  //   if (authorized) setGuest({ email });
-  //   console.log('authorized', authorized);
-  //   return authorized;
-  // };
+  const [guest, setGuest] = useState({ name: '', password: '' });
 
   return <GuestContext.Provider value={{ guest, setGuest }}>{children}</GuestContext.Provider>;
 };
