@@ -40,14 +40,14 @@
 
 ### Routes
 
-- [ ] "/" home page
+- [x] "/" home page
 - [ ] "/login" login page, redirected to if no user
 
 ### Views
 
-- [ ] Authorization page with form
+- [x] Authorization page with form
 - Form
-  - [ ] email, password
+  - [x] email, password
   - [ ] handleSubmit
     - if email === process.env.REACT_APP_AUTH_EMAIL then setUser, otherwise put error message
 
