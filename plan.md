@@ -53,4 +53,4 @@
 
 ### Components
 
-- [ ] PrivateRoute -> props: children ...rest(or routeProps) - [ ] redirects according to location and presence of user
+- [x] PrivateRoute -> props: children ...rest(or routeProps) - [ ] redirects according to location and presence of user

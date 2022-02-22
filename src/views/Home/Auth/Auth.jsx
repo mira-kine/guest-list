@@ -2,7 +2,7 @@ import React from 'react';
 import { useGuest } from '../../../context/GuestProvider/GuestProvider';
 import { useState } from 'react';
 export default function Auth() {
-  const { user } = useGuest();
+  const { guest } = useGuest();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

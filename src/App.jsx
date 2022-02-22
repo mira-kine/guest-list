@@ -2,14 +2,15 @@ import './App.css';
 import Home from './views/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Auth from './views/Home/Auth/Auth';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
+        <PrivateRoute exact path="/">
           <Home />
-        </Route>
+        </PrivateRoute>
         <Route exact path="/login">
           <Auth />
         </Route>
