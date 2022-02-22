@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 
 export default function Auth() {
-  const { login } = useGuest();
+  const { setGuest, guest } = useGuest();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setErrorMsg] = useState(null);
@@ -12,14 +12,20 @@ export default function Auth() {
   const history = useHistory();
 
   const { from } = location.state || { from: { pathname: '/' } };
+
   const handleLogin = (e) => {
     e.preventDefault();
-    const authSuccess = login(email, password);
-    {
-      authSuccess
-        ? history.replace(from.pathname)
-        : setErrorMsg('login was unsuccessful, try again');
+    if (
+      email === process.env.REACT_APP_AUTH_EMAIL &&
+      password === process.env.REACT_APP_AUTH_PASSWORD
+    ) {
+      setGuest({ email: email, password: password });
+      setEmail('');
+      setPassword('');
+    } else {
+      setErrorMsg('login was unsuccessful, try again!');
     }
+    history.replace(from.pathname);
   };
 
   return (
