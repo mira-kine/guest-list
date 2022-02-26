@@ -7,9 +7,8 @@ import { useKeyPress } from 'react-recipes';
 import { useHistory } from 'react-router-dom';
 
 export default function GuestInput() {
-  const [name] = useState('');
   const [guestEntry, setGuestEntry] = useState('');
-  const { setGuest } = useGuest();
+  const { setGuest, guest } = useGuest();
   const { setEntry } = useEntry();
   const mPress = useKeyPress('m');
   const iPress = useKeyPress('i');
@@ -24,7 +23,7 @@ export default function GuestInput() {
     // setGuest(name);
     setEntry((prevState) => [
       ...prevState,
-      { name, message: guestEntry, id: Math.floor(Math.random() * 100) },
+      { name: guest.name, message: guestEntry, id: Math.floor(Math.random() * 100) },
     ]);
 
     // reset entry space as empty string

@@ -1,20 +1,18 @@
 import React from 'react';
 import { useEntry } from '../../context/EntryProvider/EntryProvider';
-// import { useGuest } from '../../context/GuestProvider/GuestProvider';
 import './EntryCard.css';
 
 export default function EntryCard() {
   const { entry } = useEntry();
-  // const { guest } = useGuest();
   return (
     <>
-      {entry.map(({ name, message, id }) => (
-        <div key={id} className="entry-card">
+      {entry.map((item) => (
+        <div key={item.id} className="entry-card">
           <div className="name">
-            {name} {name === 'indy' ? ' 🎹 ' : ' 🌸  '}
-            {name === 'tis' && ' 🌟 '}
+            {item.name} {item.name === 'indy' ? ' 🎹 ' : ' 🌸  '}
+            {item.name === 'tis' && ' 🌟 '}
           </div>
-          <p className="message">{message}</p>
+          <p className="message">{item.message}</p>
         </div>
       ))}
     </>
